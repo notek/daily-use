@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>闭包</title>
+</head>
+<body>
+
+	<script>
+
+		var time = 0;
+
+		document.onkeydown = function(e) {
+
+			!time && (time = e.timeStamp);
+
+		};
+
+		document.onkeyup = function(e) {
+
+			var atime = 0;
+
+			if(time) {
+
+				atime = e.timeStamp - time;
+
+				time = 0;
+
+			}
+
+			alert('key length:' + atime);
+
+		};
+
+	</script>
+</body>
+</html>
