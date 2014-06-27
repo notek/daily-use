@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>zoom缩放</title>
+	<style>
+		body,html {
+			margin:0;
+			width:100%;
+			height:100%;
+		}
+		#box {
+			width:100px;
+			height:200px;
+			margin:0 auto;
+			background:#ccc;
+		}
+		p {
+			text-align:center;
+		}
+	</style>
+	<script>
+		window.onload = function() {
+			var num = 1,
+				body = document.body,
+				standard = 1200, //标准尺寸
+				msg = document.getElementById('msg'),
+				html = document.getElementsByTagName('html')[0];
+			var wid = html.offsetWidth,
+				scale = wid / standard;
+			body.style.zoom = scale;
+			msg.innerHTML = '当前缩放<b style="color:red;">'+ scale +'</b>≈<b style="color:red;">'+ scale.toFixed(2) +'</b>倍' ;
+			window.onresize = function() {
+				wid = html.offsetWidth;
+				scale = wid / standard;
+				body.style.zoom = scale;
+				msg.innerHTML = '当前缩放<b style="color:red;">'+ scale +'</b>≈<b style="color:red;">'+ scale.toFixed(2) +'</b>倍' ;
+				console.log(scale,'执行事件'+num+++'次');
+			};
+		};
+	</script>
+</head>
+<body>
+	<div id="box">
+		zoom缩放测试
+	</div>
+	<p id="msg"></p>
+</body>
+</html>
