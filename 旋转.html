@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>列表</title>
+	<style>
+		body {
+			margin:0;
+		}
+		ul {
+			top:140px;
+			left:50%;
+			width:120px;
+			height:150px;
+			padding-left:0;
+			position:absolute;
+			margin-left:-60px;
+			/* -webkit-backface-visibility:hidden; 使3d元素后面的元素不可见*/
+			-webkit-transform:rotateX(3deg);
+			-webkit-transform-style:preserve-3d;
+			-webkit-animation:my 3s ease-in infinite;
+			-webkit-transition:-webkit-transform 1s ease;
+		}
+		/* @-webkit-keyframes my {
+			0% {
+				-webkit-transform:rotateY(0deg);
+			}
+			100% {
+				-webkit-transform:rotateY(-360deg);
+			}
+		} */
+		li {
+			list-style:none;
+		}
+		#box {
+			width:700px;
+			height:400px;
+			margin:50px auto 0;
+			position:relative;
+			border:1px solid #ccc;
+			-webkit-perspective:500px;
+		}
+		#box li {
+			top:0;
+			left:0;
+			margin:10px;
+			cursor:pointer;
+			background:#e50;
+			padding:35px 45px;
+			position:absolute;
+			display:inline-block;
+			-webkit-transition:all .3s ease;
+		}
+		
+		li:nth-child(1) { 
+			-webkit-transform:rotateY(0deg) translateZ(175px);
+		}
+		li:nth-child(2) { 
+			-webkit-transform:rotateY(36deg) translateZ(175px);
+		}
+		li:nth-child(3) { 
+			-webkit-transform:rotateY(72deg) translateZ(175px);
+		}
+		li:nth-child(4) { 
+			-webkit-transform:rotateY(108deg) translateZ(175px);
+		}
+		li:nth-child(5) { 
+			-webkit-transform:rotateY(144deg) translateZ(175px);
+		}
+		li:nth-child(6) { 
+			-webkit-transform:rotateY(180deg) translateZ(175px);
+		}
+		li:nth-child(7) { 
+			-webkit-transform:rotateY(216deg) translateZ(175px);
+		}
+		li:nth-child(8) { 
+			-webkit-transform:rotateY(252deg) translateZ(175px);
+		}
+		li:nth-child(9) { 
+			-webkit-transform:rotateY(288deg) translateZ(175px);
+		}
+		li:nth-child(10) { 
+			-webkit-transform:rotateY(324deg) translateZ(175px);
+		}
+	</style>
+	<script>
+		window.onload = function() {
+			var ul = document.getElementsByTagName('ul')[0],
+				lis = ul.getElementsByTagName('li'), num = 0;
+			var len = lis.length;
+			for(var i=0; i<len; i++) {
+				lis[i].onclick = function() {
+					num -= 36;
+					ul.style.webkitTransform = 'rotateX(3deg) rotateY('+ num +'deg)';
+				};
+			}
+			/*setInterval(function() {
+				num -= 36;
+				ul.style.webkitTransform = 'rotateX(5deg) rotateY('+ num +'deg)';
+			},3000);*/
+		};
+	</script>
+</head>
+<body>
+	<div id="box">
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+		</ul>
+	</div>
+</body>
+</html>
