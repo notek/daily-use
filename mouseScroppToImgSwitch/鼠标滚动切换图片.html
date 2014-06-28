@@ -1,0 +1,65 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>鼠标滚动图片切换</title>
+	<style>
+		body,ul {
+			margin:0;
+		}
+		ul {
+			padding-left:0;
+		}
+		li {
+			list-style:none;
+		}
+		#box {
+			height:550px;
+			margin-top:30px;
+			overflow:hidden;
+		}
+		.imgs {
+			height:100%;
+			
+		}
+		.imgs li, .imgs li img {
+			width:auto;
+			height:100%;
+		}
+		.imgs li {
+			float:left;
+		}
+		.next, .prev, .close {
+			cursor:pointer;
+		}
+	</style>
+	<script src="js/N.js"></script>
+	<script src="js/scroll.js"></script>
+</head>
+<body>
+	<div id="box">
+		<div class="info">
+			<em class="now">1</em>
+			/
+			<em class="all">0</em>
+			<span class="prev">上一张</span>
+			<span class="next">下一张</span>
+			<span class="close">关闭</span>
+		</div>
+		<ul class="imgs">
+			<li><img src="images/1.jpg" alt=""></li>
+			<li><img src="images/2.jpg" alt=""></li>
+			<li><img src="images/3.jpg" alt=""></li>
+			<li><img src="images/4.jpg" alt=""></li>
+			<li><img src="images/5.jpg" alt=""></li>
+			<li><img src="images/6.jpg" alt=""></li>
+			<li><img src="images/7.jpg" alt=""></li>
+			<li><img src="images/8.jpg" alt=""></li>
+			<li><img src="images/11.jpg" alt=""></li>
+			<li><img src="images/9.jpg" alt=""></li>
+			<li><img src="images/10.jpg" alt=""></li>
+		</ul>
+	</div>
+	
+</body>
+</html>
