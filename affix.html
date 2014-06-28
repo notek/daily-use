@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>affix</title>
+	<style>
+		.nav {
+			top:50px;
+			right:100px;
+			position:fixed;
+		}
+	</style>
+	<script>
+		window.onload = function() {
+			var arr = [],
+				ns = document.getElementsByTagName('li'),
+				ds = document.getElementsByTagName('div');
+			var len = ds.length;
+			for(var i=0; i<len; i++) {
+				if(ds[i].getAttribute('scroll')) {
+					arr.push(ds[i]);
+				}
+			}
+			this.addEventListener('scroll',function() {
+				var se = document.documentElement.clientHeight; //浏览器可见区域高度。
+				for(var i=0; i<len; i++) {
+					var top = arr[i].getBoundingClientRect().top //元素顶端到可见区域顶端的距离
+					if(top <= se && top <= 0) {
+						ns[i].style.color = 'red';
+						if((top + arr[i].offsetHeight) <= 0) {
+							ns[i].style.color = '#000';
+						}
+					}else {
+						ns[i].style.color = '#000';
+					}
+				}
+			},false);
+		}
+	</script>
+</head>
+<body>
+	<div class="one" scroll="affix">
+		<pre>
+			dfg
+			dfg
+			d
+			gdf
+			g
+			fdg
+			df
+			gdf
+			g
+			dfg
+			fd
+			g
+			dfg
+			df
+			gdf
+			g
+			df
+			gfd
+			g
+			df
+			gdf
+			g
+			dfg
+			df
+			g
+		</pre>
+	</div>
+	<div class="two" scroll="affix">
+		<pre>
+			dfg
+			dfg
+			d
+			gdf
+			g
+			fdg
+			df
+			gdf
+			g
+			dfg
+			fd
+			g
+			dfg
+			df
+			gdf
+			g
+			df
+			gfd
+			g
+			df
+			gdf
+			g
+			dfg
+			df
+			g
+		</pre>
+	</div>
+	<div class="three" scroll="affix">
+		<pre>
+			dfg
+			dfg
+			d
+			gdf
+			g
+			fdg
+			df
+			gdf
+			g
+			dfg
+			fd
+			g
+			dfg
+			df
+			gdf
+			g
+			df
+			gfd
+			g
+			df
+			gdf
+			g
+			dfg
+			df
+			g
+		</pre>
+	</div>
+	<div class="four" scroll="affix">
+		<pre>
+			dfg
+			dfg
+			d
+			gdf
+			g
+			fdg
+			df
+			gdf
+			g
+			dfg
+			fd
+			g
+			dfg
+			df
+			gdf
+			g
+			df
+			gfd
+			g
+			df
+			gdf
+			g
+			dfg
+			df
+			g
+		</pre>
+	</div>
+	<ul class="nav">
+		<li>one</li>
+		<li>two</li>
+		<li>three</li>
+		<li>four</li>
+	</ul>
+</body>
+</html>
