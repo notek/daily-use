@@ -1,0 +1,71 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test tipslayer</title>
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/main.css" />
+	<script type="text/javascript" src="js/tipslayer-beta-v1.0.js"></script>
+	<script type="text/javascript">
+		window.onload = function() {
+			var war = document.getElementById('war'),
+				con = document.getElementById('con'),
+				pro = document.getElementById('pro'),
+				mes = document.getElementById('mes');
+			war.onclick = function() {
+				Add.sysLayer({
+					val:60,
+					type:'WARAING',
+					mode:'opacity',
+					ismask:true,
+					isdrag:true,
+					isscroll:true,
+					hidetype:'conversionO',
+					mess:'对不起，您的输入有误'
+				});
+			}
+			con.onclick = function() {
+				Add.sysLayer({
+					ismask:true,
+					type:'CONFRIM',
+					mode:'buffer',
+					mess:'确认删除？',
+					callback:function() {
+						alert('ok');
+					}
+				});
+			}
+			pro.onclick = function() {
+				Add.sysLayer({
+					isdrag:true,
+					ismask:true,
+					isscroll:true,
+					type:'PROMPT',
+					mode:'default',
+					hidetype:'conversionH',
+					mess:'请输入您的名字：',
+					callback:function() {
+						alert(arguments[0]);
+					}
+				});
+			}
+			mes.onclick = function() {
+				Add.sysLayer({
+					isdrag:true,
+					isscroll:true,
+					ismask:true,
+					mode:'flex',
+					type:'MESSAGE',
+					msg:'对不起，由于您输入的信息错误，所以我们不能为您处理您的业务，请重新填写您的个人信息后在提交，届时我们会为您处理您别的业务，若有得罪，请多包涵。'
+				});
+			}
+		}
+	</script>
+</head>
+<body style="height:2000px;">
+	<input type="button" value="waraing" id="war">
+	<input type="button" value="confrim" id="con">
+	<input type="button" value="prompt" id="pro">
+	<input type="button" value="message" id="mes">
+</body>
+</html>

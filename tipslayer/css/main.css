@@ -1,0 +1,184 @@
+#mask {
+	top:0;
+	left:0;
+	z-index:10;
+	opacity:.5;
+	width:100%;
+	height:100%;
+	position:fixed;
+	background:#000;
+	filter:alpha(opacity:50);
+}
+#addbox {
+	width:100%;
+	height:100%;
+	z-index:100;
+	position:relative;
+}
+#addbox .waraing, #addbox .confrim, #addbox .prompt, #addbox .b {
+	top:50%;
+	left:50%;
+	opacity:1;
+	overflow:hidden;
+	position:absolute;
+}
+#addbox .waraing {
+	width:250px;
+	height:140px;
+	margin:-70px 0 0 -125px;
+	background:url(../images/waraing_bg.png) no-repeat;
+}
+#addbox .waraing .icon {
+	width:38px;
+	height:38px;
+	float:left;
+	margin:35px 0 0 35px;
+	background:url(../images/waraing_icon.png) no-repeat;
+}
+#addbox .waraing .msg {
+	color:#fff;
+	margin-top:40px;
+	text-indent:15px;
+	font:normal 14px/26px microsoft yahei, Arial;
+}
+#addbox .waraing .btn {
+	color:#cc401a;
+	width:126px;
+	height:34px;
+	display:block;
+	cursor:pointer;
+	margin:25px auto 0;
+	text-align:center;
+	font:normal 16px/34px microsoft yahei, Arial;
+	background:url(../images/waraing_btn.png) no-repeat;
+}
+#addbox .confrim {
+	width:250px;
+	height:160px;
+	margin:-80px 0 0 -125px;
+	background:url(../images/confrim_bg.png) no-repeat;
+}
+#addbox .confrim .tit {
+	float:left;
+	width:34px;
+	height:32px;
+	margin:20px 0 0 20px;
+	background:url(../images/confrim_icon.png) no-repeat;
+}
+#addbox .confrim .cmsg {
+	color:#fff;
+	margin-top:55px;
+	text-align:center;
+	font:normal 14px/26px microsoft yahei, Arial;
+}
+#addbox .confrim .btnbox {
+	width:212px;
+	height:51px;
+	margin:20px auto 0;
+	background:url(../images/confrim_btn.png) no-repeat;
+}
+#addbox .confrim .btnbox .ok, #addbox .confrim .btnbox .no {
+	color:#fff;
+	width:105px;
+	height:38px;
+	cursor:pointer;
+	text-align:center;
+	display:inline-block;
+	font:normal 12px/38px microsoft yahei, Arial;
+}
+#addbox .confrim .btnbox .ok {
+	margin-right:2px;
+}
+#addbox .prompt {
+	width:238px;
+	height:199px;
+	margin:-99px 0 0 -116px;
+	background:url(../images/prompt_bg.png) no-repeat;
+}
+#addbox .prompt .tip {
+	color:#9b9b9b;
+	margin:20px 0 0 25px;
+	font:normal 14px/26px microsoft yahei, Arial;
+}
+#addbox .prompt .txt {
+	width:190px;
+	height:59px;
+	border:none;
+	resize:none;
+	outline:none;
+	overflow:hidden;
+	margin:10px 0 0 25px;
+	font:normal 12px/22px microsoft yahei, Arial;
+	background:url(../images/prompt_input.png) no-repeat;
+}
+#addbox .prompt .btnok, #addbox .prompt .btnno {
+	color:#fff;
+	float:left;
+	width:99px;
+	height:28px;
+	display:block;
+	cursor:pointer;
+	margin-top:40px;
+	text-align:center;
+	font:normal 14px/28px microsoft yahei, Arial;
+	background:url(../images/prompt_btn.png) no-repeat;
+}
+#addbox .prompt .btnok {
+	margin:40px 5px 0 18px;
+}
+#addbox .b {
+	width:365px;
+	height:auto;
+	margin-left:-182px;
+}
+#addbox .topbg, #addbox .botbg {
+	width:100%;
+	height:3px;
+}
+#addbox .topbg {
+	background:url(../images/message_top.png) no-repeat;
+}
+#addbox .botbg {
+	background:url(../images/message_bot.png) no-repeat;
+}
+#addbox .mcon {
+	width:100%;
+	height:auto;
+	background:#414242;
+}
+#addbox .mcon .micon {
+	float:left;
+	width:59px;
+	height:42px;
+	margin:30px 0 0 20px;
+	background:url(../images/message_icon.png) no-repeat;
+}
+#addbox .mcon .pcon {
+	color:#fff;
+	float:right;
+	width:240px;
+	padding:30px 20px 0 0;
+	font:normal 14px/22px microsoft yahei, Arial;
+}
+#addbox .mcon .mbtn {
+	width:132px;
+	height:37px;
+	color:#ff7b5c;
+	display:block;
+	cursor:pointer;
+	text-align:center;
+	margin:35px auto 0;
+	padding-bottom:10px;
+	font:normal 14px/37px microsoft yahei, Arial;
+	background:url(../images/message_btn.png) no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
