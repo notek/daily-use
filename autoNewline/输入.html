@@ -1,0 +1,74 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自动输入</title>
+	<style>
+		#t {
+			width:560px;
+			margin:0 auto;
+			text-align:center;
+		}
+		#t input {
+			width:120px;
+			height:25px;
+			outline:none;
+			text-indent:5px;
+			margin-right:15px;
+			border-radius:3px;
+			border:1px solid #ccc;
+		}
+		#t input:focus {
+			border-color:#3893e8;
+			box-shadow:0 0 4px #3893e8;
+		}
+	</style>
+	<script src="js/N1.js"></script>
+	<script>
+		var cre = (function(doc) {
+			return function(obj,num,words) {
+				words = words || 6;
+				//生成输入框
+				var frg = doc.createDocumentFragment();
+				for(var i=0; i<num; i++) {
+					var ipt = doc.createElement('input');
+					ipt.type = 'text', ipt.className = 'is';
+					frg.appendChild(ipt);
+				}
+				obj.appendChild(frg);
+				frg = null;
+				//获取输入框
+				var ipts = S.selector('input','is'), len = ipts.length;
+				ipts[0].focus();
+				for(var i=0; i<len; i++) {
+					ipts[i].onfocus = function() {
+						this.oncontextmenu = function() {
+							return false;
+						};
+					};
+					ipts[i].onkeyup = function() {
+						if(isNaN(this.value)) {
+							this.value = '';
+						}else {
+							if(this.value.length >= words) {
+								var next = this.nextSibling || '';
+								this.value = this.value.slice(0,words);
+								if(next.tagName === 'INPUT' && next.type === 'text' && next) {
+									next.focus();
+									next.select();
+								}
+							}
+						}
+					};
+				}
+			};
+		})(document);
+	</script>
+</head>
+<body>
+	<div id="t"></div>
+	<script>
+		cre(document.getElementById('t'),4,6);
+	</script>
+</body>
+</html>
