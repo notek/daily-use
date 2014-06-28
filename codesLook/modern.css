@@ -1,0 +1,6 @@
+.msb .list li {
+	transition:all .2s ease;
+}
+.msb .list li:hover {
+	text-indent:25px;
+};
